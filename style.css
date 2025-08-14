@@ -86,11 +86,11 @@
     /* --- Intro Sections --- */
     .intro-banner {
         background-color: var(--primary-color);
-        color: var(--secondary-color);
+        color: var(--light-background);
         text-align: center;
         padding: 25px 0;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         line-height: 1.8;
     }
     .intro-banner span { color: var(--secondary-color); }
@@ -98,6 +98,13 @@
     .rooky-logo { max-width: 180px; margin: 0 auto 25px; }
     .intro-details p { font-size: 1.2rem; font-weight: 700; line-height: 2; }
 
+    .animated-arithmetic {
+        font-size: 1.3rem;
+        color: var(--secondary-color);
+        display: inline-block;
+        animation: bounce 1s infinite alternate;
+      }
+      
     /* --- Reasons Section --- */
     .reasons-section { background-color: var(--light-background); }
     .reason-item {
@@ -275,12 +282,12 @@
     /* --- Footer --- */
     .final-cta {
         background: var(--primary-color);
-        color: var(--light-text-color);
+        color: var(--light-background);
         text-align: center;
         padding: 80px 0;
     }
-    .final-cta-subtitle { font-size: 1.1rem; }
-    .final-cta-title { font-size: 3.5rem; font-weight: 900; margin: 10px 0 40px 0; }
+    .final-cta-subtitle { font-size: 2rem; }
+    .final-cta-title { font-size: 4.5rem; font-weight: 900; margin: 10px 0 40px 0; }
     .footer-details { margin-top: 50px; opacity: 0.9; }
     .footer-details p { margin: 8px 0; }
     .footer-copyright { margin-top: 25px; font-size: 0.9rem; opacity: 0.7; }
