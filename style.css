@@ -191,6 +191,87 @@
         font-size: 1.1rem;
     }
 
+    /* --- Event Details Section --- */
+    .event-details-section { background-color: var(--alt-background); }
+    .details-flex-container {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .detail-box {
+        background: var(--light-background);
+        padding: 30px 35px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        flex: 1;
+        max-width: 450px;
+        border-top: 5px solid var(--primary-color);
+    }
+    .detail-box h3 {
+        color: var(--accent-color);
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    /* --- Steps Section --- */
+    .steps-section { background-color: var(--light-background); }
+    .steps-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+    }
+    /* Creates the vertical line connecting the steps */
+    .steps-container::before {
+        content: '';
+        position: absolute;
+        left: 49px; /* Aligns with the center of the step number */
+        top: 30px;
+        bottom: 30px;
+        width: 4px;
+        background-color: #e0e0e0;
+        border-radius: 2px;
+        z-index: 0;
+    }
+    .step-item {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        position: relative; /* Needed for z-index to work */
+        z-index: 1;
+    }
+    .step-number {
+        background-color: var(--primary-color);
+        color: #FFFFFF; /* MODIFIED: Set to white for better contrast */
+        font-size: 1.8rem;
+        font-weight: 900;
+        min-width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid var(--light-background); /* Creates space from the line */
+    }
+    .step-content {
+        background: var(--alt-background);
+        padding: 20px;
+        border-radius: var(--border-radius);
+        flex: 1;
+    }
+    .step-content h4 {
+        font-size: 1.3rem;
+        color: var(--accent-color);
+        margin-bottom: 5px;
+    }
+    .step-content p {
+        margin: 0;
+        color: #666;
+    }
+    
     /* --- Footer --- */
     .final-cta {
         background: var(--primary-color);
