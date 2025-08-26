@@ -1,12 +1,11 @@
-    :root {
-        --primary-color: #00A99D;
-        --secondary-color: #FFC107; /* A brighter yellow/orange */
-        --accent-color: #003366;
-        --background-color: #FDFCF7;
-        --light-background: #FFFFFF;
-        --alt-background: #E0F7FA;
+:root {
+        --primary-color: #00A99D; /* Green */
+        --secondary-color: #FFC107; /* Yellow accent */
+        --accent-color: #003366; /* Dark Blue */
+        --background-color: #FFFBEB; /* Soft Yellow Background */
+        --light-background: #FFFFFF; /* White for contrasting sections */
         --text-color: #333;
-        --light-text-color: #000000; 
+        --light-text-color: #FFFFFF; /* Changed back to white for readability on dark backgrounds */
         --border-radius: 12px;
         --shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
@@ -23,6 +22,7 @@
         max-width: 980px;
         margin: 0 auto;
         padding: 0 20px;
+        position: relative; /* Needed for positioning context */
     }
     h1, h2, h3, h4 {
         font-weight: 700;
@@ -50,16 +50,103 @@
         border-radius: 5px;
     }
 
+    /* --- NEW: Top Bar --- */
+    .top-bar {
+        background-color: var(--primary-color);
+        padding: 8px 0;
+        position: relative;
+        /* position: sticky; */
+        z-index: 1000;
+    }
+
+    .top-bar .container {
+        display: flex;
+        justify-content: flex-end;
+        max-width: none; 
+    }
+    .language-selector {
+        position: relative;
+        cursor: pointer;
+    }
+    .current-lang {
+        color: var(--light-text-color);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 10px;
+        border: 1px solid rgba(255,255,255,0.5);
+        border-radius: 5px;
+    }
+    .lang-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--light-background);
+        list-style: none;
+        padding: 0;
+        margin: 5px 0 0 0;
+        border-radius: 5px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    .language-selector:hover .lang-dropdown {
+        display: block;
+    }
+    .lang-dropdown li a {
+        display: block;
+        padding: 10px 20px;
+        color: var(--text-color);
+        text-decoration: none;
+        white-space: nowrap;
+    }
+    .lang-dropdown li a:hover {
+        background-color: #f0f0f0;
+    }
+
     /* --- Hero Section --- */
     .hero {
-        background: var(--alt-background) url('https://www.transparenttextures.com/patterns/subtle-prism.png');
-        color: var(--light-text-color);
+        background-color: var(--background-color);
+        color: var(--text-color); /* Text color changed for light background */
         text-align: center;
         padding: 100px 0;
+        position: relative;
+        overflow: hidden; /* Important for pseudo-elements */
     }
-    .hero-subtitle { font-size: 1.3rem; }
-    .hero-title { font-size: 2.8rem; margin: 15px 0 35px; }
-    .hero-title span { font-size: 4.5rem; font-weight: 900; letter-spacing: 2px; }
+    /* Left background image */
+    .hero::before {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        left: -80px;
+        width: 700px;
+        height: 500px;
+        background-image: url('images/jobfairmain01.webp');
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* opacity: 0.5; */
+    }
+    /* Top-right background image */
+    .hero::after {
+        content: '';
+        position: absolute;
+        top: -200px;
+        right: -275px;
+        width: 650px;
+        height: 550px;
+        background-image: url('images/jobfairmain02.webp');
+        background-size: contain;
+        /* background-repeat: no-repeat; */
+        border-radius: 90%;
+        /* opacity: 0.3; */
+    }
+    .hero .container {
+        z-index: 1; /* Ensure content is above pseudo-elements */
+    }
+    .hero-subtitle { font-size: 2.3rem; }
+    .hero-subtitle {color: #ff8c00; font-weight: bold;}
+    .hero-title { font-size: 3.8rem; margin: 15px 0 35px; }
+    .hero-title span { font-size: 5.5rem; font-weight: 900; letter-spacing: 2px; color: var(--primary-color); }
     .hero-cta {
         display: inline-block;
         background-color: #FF8C00;
@@ -86,18 +173,17 @@
     /* --- Intro Sections --- */
     .intro-banner {
         background-color: var(--primary-color);
-        color: var(--light-background);
+        color: var(--light-text-color);
         text-align: center;
         padding: 25px 0;
         font-weight: 700;
         font-size: 1.3rem;
         line-height: 1.8;
     }
-    .intro-banner span { color: var(--secondary-color); }
-    .intro-details { text-align: center; padding: 60px 0; }
+    .intro-banner span { color: var(--secondary-color); font-weight: 900; }
+    .intro-details { text-align: center; padding: 60px 0; background-color: var(--light-background); }
     .rooky-logo { max-width: 180px; margin: 0 auto 25px; }
     .intro-details p { font-size: 1.2rem; font-weight: 700; line-height: 2; }
-
     .animated-arithmetic {
         font-size: 1.3rem;
         color: var(--secondary-color);
