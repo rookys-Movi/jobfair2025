@@ -149,20 +149,27 @@
     .hero-title span { font-size: 5.5rem; font-weight: 900; letter-spacing: 2px; color: var(--primary-color); }
     .hero-cta {
         display: inline-block;
-        background-color: #FF8C00;
-        color: var(--light-text-color);
-        padding: 18px 45px;
-        font-size: 1.6rem;
-        font-weight: 700;
-        text-decoration: none;
-        border-radius: 50px;
+        width: 220px;  
+        height: 70px;  
+        background-image: url('images/contact.webp'); 
+        background-size: contain;  
+        background-position: center;
+        background-repeat: no-repeat;
+        border: none;
+        border-radius: 0;        
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         transition: all 0.3s ease;
     }
-    .hero-cta:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-    .cta-free {
+
+    .hero-cta:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        filter: brightness(1.1); /* subtle highlight */
+    }
+   .cta-free {
         background-color: var(--light-text-color);
         color: #FF8C00;
+        background-image: url('images/contact.webp');
         padding: 6px 12px;
         border-radius: 15px;
         font-size: 1rem;
