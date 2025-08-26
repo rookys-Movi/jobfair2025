@@ -189,8 +189,9 @@
     }
     .intro-banner span { color: var(--secondary-color); font-weight: 900; }
     .intro-details { text-align: center; padding: 60px 0; background-color: var(--light-background); }
-    .rooky-logo { max-width: 180px; margin: 0 auto 25px; }
-    .intro-details p { font-size: 1.2rem; font-weight: 700; line-height: 2; }
+    .intro-details .container {display: flex; align-items: center; justify-content: center; gap: 5px; }
+    .intro-details p { font-size: 1.3rem; font-weight: 700; line-height: 2; margin: 0; flex: 1; order: 1; text-align: center; }
+    .rooky-logo { max-width: 300px; height: auto; margin:10px; flex: 0 0 auto; order: 2; }
     .animated-arithmetic {
         font-size: 1.3rem;
         color: var(--secondary-color);
@@ -393,4 +394,7 @@
         .reason-image { max-width: 250px; margin: 20px auto 0; }
         .overview-content { flex-direction: column; }
         .chart-container { flex-direction: column; }
+        .intro-details .container { flex-direction: column; text-align: center; }
+        .intro-details p { order: 0; }
+        .rooky-logo { order: 0; margin: 20px auto 0; }
     }
