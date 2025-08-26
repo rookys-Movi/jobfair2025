@@ -75,3 +75,27 @@
             }
         }
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const paginationButtons = document.querySelectorAll('.pagination-btn');
+        const testimonialPages = document.querySelectorAll('.testimonial-page');
+
+        paginationButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetPage = this.getAttribute('data-page');
+
+                // Update button active state
+                paginationButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                // Update page visibility
+                testimonialPages.forEach(page => {
+                    if (page.getAttribute('data-page') === targetPage) {
+                        page.classList.add('active');
+                    } else {
+                        page.classList.remove('active');
+                    }
+                });
+            });
+        });
+    });

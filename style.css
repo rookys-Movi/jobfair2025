@@ -297,14 +297,80 @@
     .chart-wrapper { flex: 1; min-width: 300px; max-width: 450px; text-align: center; }
     .chart-wrapper h3 { margin-bottom: 20px; color: var(--accent-color); }
     .companies-section { background-color:  #FFFBEB; }
-    .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px; align-items: center; }
+    .logo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: center; }
     .logo-placeholder { background-color: #e0e0e0; height: 80px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: #999; font-weight: bold; }
 
     /* --- Testimonials Section --- */
     .testimonials-section { background-color: var(--alt-background); }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .testimonial-card { display: flex; align-items: center; gap: 20px; background: var(--light-background); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow); }
-    .testimonial-card img { width: 80px; height: 80px; border-radius: 50%; }
+    
+    .testimonial-slider {
+        position: relative;
+        min-height: 350px; /* Adjust as needed to prevent layout shift */
+    }
+
+    .testimonial-page {
+        display: none; /* Hide pages by default */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .testimonial-page.active {
+        display: grid; /* Show the active page */
+    }
+
+    .testimonial-card { 
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center-align items */
+        text-align: center;
+        gap: 15px; 
+        background: var(--light-background); 
+        padding: 30px 25px; 
+        border-radius: var(--border-radius); 
+        box-shadow: var(--shadow);
+        border-top: 5px solid var(--secondary-color);
+    }
+    .testimonial-card img { 
+        max-width: 120px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+    .testimonial-card h4 {
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .testimonial-card p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .testimonial-pagination {
+        text-align: center;
+        margin-top: 40px;
+    }
+    .pagination-btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ccc;
+        border: none;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .pagination-btn.active {
+        background-color: var(--primary-color);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
     
     /* --- Peace of Mind Section --- */
     .peace-of-mind-section { background-color:  #FFFBEB; }
