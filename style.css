@@ -188,7 +188,7 @@
         line-height: 1.8;
     }
     .intro-banner span { color: var(--secondary-color); font-weight: 900; }
-    .intro-details { text-align: center; padding: 60px 0; background-color: var(--light-background); }
+    .intro-details { text-align: center; padding: 60px 0; background-color:  #FFFBEB; }
     .intro-details .container {display: flex; align-items: center; justify-content: center; gap: 5px; }
     .intro-details p { font-size: 1.3rem; font-weight: 700; line-height: 2; margin: 0; flex: 1; order: 1; text-align: center; }
     .rooky-logo { max-width: 300px; height: auto; margin:10px; flex: 0 0 auto; order: 2; }
@@ -200,7 +200,7 @@
       }
       
     /* --- Reasons Section --- */
-    .reasons-section { background-color: var(--light-background); }
+    .reasons-section { background-color: #FFFBEB; }
     .reason-item {
         display: flex;
         align-items: center;
@@ -243,7 +243,7 @@
     .overview-content img { flex: 0 0 40%; border-radius: var(--border-radius); }
 
     /* --- Strengths Section --- */
-    .strengths-section { background-color: var(--light-background); }
+    .strengths-section { background-color: #FFFBEB }
     .strengths-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
     .strength-card {
         background: var(--light-background);
@@ -270,7 +270,7 @@
     .chart-container { display: flex; justify-content: space-around; gap: 40px; flex-wrap: wrap; }
     .chart-wrapper { flex: 1; min-width: 300px; max-width: 450px; text-align: center; }
     .chart-wrapper h3 { margin-bottom: 20px; color: var(--accent-color); }
-    .companies-section { background-color: var(--light-background); }
+    .companies-section { background-color:  #FFFBEB; }
     .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px; align-items: center; }
     .logo-placeholder { background-color: #e0e0e0; height: 80px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: #999; font-weight: bold; }
 
@@ -281,7 +281,7 @@
     .testimonial-card img { width: 80px; height: 80px; border-radius: 50%; }
     
     /* --- Peace of Mind Section --- */
-    .peace-of-mind-section { background-color: var(--light-background); }
+    .peace-of-mind-section { background-color:  #FFFBEB; }
     .mind-item {
         background-color: var(--alt-background);
         padding: 25px;
@@ -316,7 +316,7 @@
     }
 
     /* --- Steps Section --- */
-    .steps-section { background-color: var(--light-background); }
+    .steps-section { background-color:  #FFFBEB; }
     .steps-container {
         display: grid;
         grid-template-columns: 1fr;
