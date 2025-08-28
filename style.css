@@ -128,8 +128,8 @@
         position: absolute;
         bottom: -50px;
         left: -80px;
-        width: 700px;
-        height: 500px;
+        width: 900px;
+        height: 600px;
         background-image: url('images/jobfairmain01.webp');
         background-size: contain;
         background-repeat: no-repeat;
@@ -140,9 +140,9 @@
         content: '';
         position: absolute;
         top: -200px;
-        right: -275px;
-        width: 650px;
-        height: 550px;
+        right: -350px;
+        width: 750px;
+        height: 650px;
         background-image: url('images/jobfairmain02.webp');
         background-size: contain;
         /* background-repeat: no-repeat; */
@@ -158,8 +158,8 @@
     .hero-title span { font-size: 5.5rem; font-weight: 900; letter-spacing: 2px; color: var(--primary-color); }
     .hero-cta {
         display: inline-block;
-        width: 280px;  
-        height: 100px;  
+        width: 380px;  
+        height: 150px;  
         background-image: url('images/contact.webp'); 
         background-size: contain;  
         background-position: center;
@@ -261,7 +261,7 @@
 
     /* --- Strengths Section --- */
     .strengths-section { background-color: #FFFBEB }
-    .strengths-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 20px; row-gap: 12px; align-items: start; justify-items: stretch; }
+    .strengths-grid { display: grid; grid-template-columns: 1fr; column-gap: 20px; row-gap: 12px; align-items: start; justify-items: stretch; }
     .strength-card {
         background: var(--light-background);
         padding: 10px 14px;
@@ -273,8 +273,8 @@
         align-items: center;
         gap: 10px;
         text-align: left;
-        width: 100%;
-        max-width: 100%;
+        width: 90%;
+        max-width:90%;
         justify-self: stretch;
     }
     /* Text stack (odd rows): number, title, description = separate lines with no gaps */
@@ -282,14 +282,11 @@
     .strength-card h4 { grid-column: 1; margin: 0; line-height: 1; }
     .strength-card p { grid-column: 1; margin: 0; line-height: 1; }
     .strength-card img { grid-column: 2; width: 80px; height: 80px; border-radius: 50%; object-fit: cover; display: block; }
-    /* Even rows: swap positions so image is before text; text right-aligned */
-    .strength-card:nth-child(even) img { grid-column: 1; }
+    /* Ensure consistent layout for all cards: text left, image right */
+    .strength-card:nth-child(even) img { grid-column: 2; }
     .strength-card:nth-child(even) .strength-number,
     .strength-card:nth-child(even) h4,
-    .strength-card:nth-child(even) p { grid-column: 2; text-align: right; }
-    /* Position rows across 3-column grid: odd = left→middle, even = right→middle */
-    .strengths-grid > .strength-card:nth-child(odd) { grid-column: 1 / span 2; }
-    .strengths-grid > .strength-card:nth-child(even) { grid-column: 2 / span 2; }
+    .strength-card:nth-child(even) p { grid-column: 1; text-align: left; }
     .strength-card .strength-number {
         background: var(--alt-background);
         color: var(--primary-color);
