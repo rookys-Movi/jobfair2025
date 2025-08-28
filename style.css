@@ -10,6 +10,9 @@
         --shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
 
+    html {
+        scroll-behavior: smooth;
+      }
     /* --- General Styles --- */
     body {
         margin: 0;
@@ -149,21 +152,21 @@
     .hero-title span { font-size: 5.5rem; font-weight: 900; letter-spacing: 2px; color: var(--primary-color); }
     .hero-cta {
         display: inline-block;
-        width: 220px;  
-        height: 70px;  
+        width: 280px;  
+        height: 100px;  
         background-image: url('images/contact.webp'); 
         background-size: contain;  
         background-position: center;
         background-repeat: no-repeat;
         border: none;
         border-radius: 0;        
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        box-shadow: none;
         transition: all 0.3s ease;
     }
 
     .hero-cta:hover {
         transform: translateY(-4px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        box-shadow: none;
         filter: brightness(1.1); /* subtle highlight */
     }
    .cta-free {
