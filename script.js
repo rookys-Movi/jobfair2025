@@ -76,6 +76,38 @@
         }
     });
 
+     // --- NEW: Sticky Navigation & Mobile Menu Logic ---
+     document.addEventListener('DOMContentLoaded', function() {
+        const nav = document.getElementById('mainNav');
+        const hamburger = document.getElementById('hamburgerMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        // 1. Sticky Navigation on Scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // 2. Hamburger Menu Toggle for Mobile
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // 3. Close mobile menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
         const paginationButtons = document.querySelectorAll('.pagination-btn');
         const testimonialPages = document.querySelectorAll('.testimonial-page');
