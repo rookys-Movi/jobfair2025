@@ -338,8 +338,8 @@
         border-top: 5px solid var(--secondary-color);
     }
     .testimonial-card img { 
-        max-width: 120px;
-        height: 60px;
+        max-width: 150px;
+        height: 90px;
         object-fit: contain;
         margin-bottom: 10px;
     }
