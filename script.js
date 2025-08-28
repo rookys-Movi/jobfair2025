@@ -8,71 +8,52 @@
 
     // --- Chart.js Configuration ---
     
-    // Chart 1: Pie Chart for JLPT Levels
-    // This visualizes the Japanese language proficiency of the student participants.
+    // Chart 1: Pie Chart for JLPT Levels (UPDATED DATA)
     const jlptCtx = document.getElementById('jlptPieChart').getContext('2d');
     const jlptPieChart = new Chart(jlptCtx, {
         type: 'pie',
         data: {
-            labels: ['N1', 'N2', 'N3 and below'],
+            labels: ['N1', 'N2', 'その他'],
             datasets: [{
-                label: 'JLPT Level Distribution',
-                data: [45, 45, 10], // Example data: 45% N1, 45% N2, 10% other
-                backgroundColor: [
-                    '#00A99D', // Primary color for N1
-                    '#00C7B7', // A lighter shade for N2
-                    '#F7931E'  // Secondary color for accent
-                ],
-                borderColor: '#FDFCF7', // Matches the page background for a "cutout" look
-                borderWidth: 3
+                label: '日本語能力',
+                data: [62, 28, 10],
+                backgroundColor: ['#003366', '#00A99D', '#FFC107'],
+                borderColor: '#FFFBEB',
+                borderWidth: 4
             }]
         },
         options: {
             responsive: true,
             plugins: {
-                legend: {
-                    position: 'top', // Display the legend above the chart
-                },
+                legend: { position: 'top' },
                 tooltip: {
                     callbacks: {
-                        // Customizes the tooltip to show a percentage
-                        label: function(context) {
-                            return `${context.label}: ${context.raw}%`;
-                        }
+                        label: (context) => `${context.label}: ${context.raw}%`
                     }
                 }
             }
         }
     });
 
-    // Chart 2: Bar Chart for Student Majors
-    // This shows the academic backgrounds of the participants.
-    const majorCtx = document.getElementById('majorBarChart').getContext('2d');
-    const majorBarChart = new Chart(majorCtx, {
+    // Chart 2: Bar Chart for Nationalities
+    const nationalityCtx = document.getElementById('nationalityBarChart').getContext('2d');
+    const nationalityBarChart = new Chart(nationalityCtx, {
         type: 'bar',
         data: {
-            labels: ['IT/情報科学', '工学', '経済/経営', '国際関係', '人文科学'],
+            labels: ['中国', '韓国', 'ベトナム', 'インド', 'ミャンマー', 'その他'],
             datasets: [{
-                label: 'Number of Students by Major',
-                data: [65, 55, 70, 40, 30], // Example data for student counts
-                backgroundColor: 'rgba(0, 169, 157, 0.7)', // Semi-transparent primary color
+                label: '国籍',
+                data: [35, 20, 18, 10, 7, 10],
+                backgroundColor: 'rgba(0, 169, 157, 0.7)',
                 borderColor: '#00A99D',
                 borderWidth: 1
             }]
         },
         options: {
-            indexAxis: 'y', // Makes the bar chart horizontal for better readability of labels
+            indexAxis: 'y',
             responsive: true,
-            plugins: {
-                legend: {
-                    display: false // Hiding the legend as it's redundant for a single-dataset bar chart
-                }
-            },
-            scales: {
-                x: {
-                    beginAtZero: true // Ensure the x-axis starts at 0
-                }
-            }
+            plugins: { legend: { display: false } },
+            scales: { x: { beginAtZero: true } }
         }
     });
 
