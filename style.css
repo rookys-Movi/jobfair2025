@@ -20,11 +20,17 @@ body {
     color: var(--text-color);
     line-height: 1.8;
 }
-.testimonials-section .container,
+/* .testimonials-section .container, */
 .event-details-section .container,
 .peace-of-mind-section .container {
     background: var(--light-background);
-    padding: 10px 10px;
+    padding: 40px 40px;
+    box-shadow: none;
+    border-radius: var(--border-radius);
+}
+.testimonials-section .container{
+    background:#00A99D;
+    padding: 40px 40px;
     box-shadow: none;
     border-radius: var(--border-radius);
 }
@@ -326,6 +332,32 @@ section {
 .logo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: center; }
 .logo-placeholder { background-color: #e0e0e0; height: 80px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: #999; font-weight: bold; }
 
+
+/* Companies section */
+.companies-section {
+    background: #FFFBEB;
+    position: relative;
+}
+
+.companies-section .container {
+    background: var(--light-background);
+    padding: 40px 40px;
+    box-shadow: none;
+    border-radius: var(--border-radius);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    max-width: 980px;
+    border-top: 20px solid #00A99D;   
+    border-bottom: 20px solid #00A99D; 
+}
+
+.companies-section .section-title {
+    color:  #003366;
+    margin-bottom: 40px;
+}
+
+
 /* --- Testimonials Section --- */
 .testimonials-section { background-color: var(--alt-background); }
 
@@ -390,7 +422,7 @@ section {
     transition: background-color 0.3s ease;
 }
 .pagination-btn.active {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 @keyframes fadeIn {
