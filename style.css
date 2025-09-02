@@ -28,7 +28,7 @@ body {
     border-radius: var(--border-radius);
 }
 .testimonials-section .container{
-    background:#00A99D;
+    background: transparent;
     padding: 40px 40px;
     box-shadow: none;
     border-radius: var(--border-radius);
@@ -343,7 +343,7 @@ section {
 }
 
 .companies-section .container {
-    background: var(--light-background);
+    background: transparent; /* let the section provide the white band */
     padding: 40px 40px;
     box-shadow: none;
     border-radius: var(--border-radius);
@@ -351,13 +351,46 @@ section {
     position: relative;
     z-index: 1;
     max-width: 980px;
-    border-top: 20px solid #00A99D;   
-    border-bottom: 20px solid #00A99D; 
+    border: none;
 }
 
 .companies-section .section-title {
     color:  #003366;
     margin-bottom: 40px;
+}
+
+/* Utility: full-bleed white band with colored top/bottom borders */
+.full-bleed-band {
+    position: relative;
+}
+
+/* White background spanning full width with borders */
+.full-bleed-band::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw; /* span full viewport width */
+    background: #FFFFFF;
+    border-top: 20px solid #00A99D;    
+    border-bottom: 20px solid #00A99D; 
+    z-index: 0;
+}
+
+/* Ensure content sits above the band */
+.full-bleed-band > .container,
+.full-bleed-band > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Modifier: full-bleed band with green background (no borders) */
+.full-bleed--green::before {
+    background: var(--primary-color);
+    border-top: 0;
+    border-bottom: 0;
 }
 
 
