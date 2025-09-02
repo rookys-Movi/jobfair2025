@@ -286,20 +286,20 @@ section {
 
 /* --- Strengths Section --- */
 .strengths-section { background-color: #FFFBEB }
-.strengths-grid { display: grid; grid-template-columns: 1fr; column-gap: 20px; row-gap: 12px; align-items: start; justify-items: stretch; }
+.strengths-grid { display: flex; flex-direction: column; column-gap: 20px; row-gap: 12px; align-items: center; justify-items: stretch; }
 .strength-card {
     background: var(--light-background);
     padding: 10px 14px;
     border: 1px solid #eee;
     border-radius: var(--border-radius);
     box-shadow: none;
-    display: grid;
-    grid-template-columns: 1fr auto; /* text stack | image */
+    display: flex;
+    flex-direction: column; /* text stack | image */
     align-items: center;
     gap: 10px;
-    text-align: left;
-    width: 90%;
-    max-width:90%;
+    text-align: center;
+    width: 60%;
+    max-width:60%;
     justify-self: stretch;
 }
 /* Text stack (odd rows): number, title, description = separate lines with no gaps */
@@ -446,6 +446,7 @@ section {
     max-width: 800px;
     /* border-left: 5px solid var(--primary-color); */
     font-size: 1.1rem;
+    box-shadow: none;
 }
 
 /* --- Event Details Section --- */
