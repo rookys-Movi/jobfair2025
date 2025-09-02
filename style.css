@@ -69,6 +69,7 @@ section {
 /* --- NEW: Top Bar --- */
 .main-nav {
     background-color: var(--primary-color);
+    font-size:1.1rem;
     padding: 15px 20px; 
     position: sticky;
     top: 0;
@@ -101,6 +102,9 @@ section {
     box-shadow: none;
     flex-direction: column;
     min-width: 200px;
+    max-height: 80vh;    
+    overflow-y: auto;     
+    overscroll-behavior: contain; 
 }
 .nav-links a {
     color: var(--light-text-color);
