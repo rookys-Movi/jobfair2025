@@ -315,14 +315,14 @@ section {
 .strength-card:nth-child(even) img { grid-column: 2; }
 .strength-card:nth-child(even) .strength-number,
 .strength-card:nth-child(even) h4,
-.strength-card:nth-child(even) p { grid-column: 1; text-align: left; }
+.strength-card:nth-child(even) p { grid-column: 1; }
 .strength-card .strength-number {
     background: var(--alt-background);
     color: var(--primary-color);
     padding: 5px 15px;
     font-weight: bold;
     border-radius: 20px;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
 }
 .strength-card h4 { font-size: 1.3rem; color: var(--accent-color); }
 
@@ -389,6 +389,22 @@ section {
 /* Modifier: full-bleed band with green background (no borders) */
 .full-bleed--green::before {
     background: var(--primary-color);
+    border-top: 0;
+    border-bottom: 0;
+}
+
+/* Modifier: full-bleed band with green checker box pattern */
+.full-bleed--green-checker::before {
+    /* Base green */
+    background-color: var(--primary-color);
+    /* Checker pattern */
+    background-image:
+        repeating-linear-gradient(90deg, transparent 0 23px, white 23px 24px), /* vertical white lines */
+        repeating-linear-gradient(0deg,  transparent 0 23px, white 23px 24px); /* horizontal white lines */
+        /* linear-gradient(45deg, rgba(255,255,255,0.08) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.08) 75%),
+        linear-gradient(45deg, rgba(255,255,255,0.08) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.08) 75%); */
+    background-size: 24px 24px;
+    background-position: 0 0, 12px 12px;
     border-top: 0;
     border-bottom: 0;
 }
