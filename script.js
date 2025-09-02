@@ -125,4 +125,3 @@ document.addEventListener('DOMContentLoaded', function() {
     //         scales: { x: { beginAtZero: true } }
     //     }
     // });
-

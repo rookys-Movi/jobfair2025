@@ -23,7 +23,6 @@ body {
 /* .testimonials-section .container, */
 .event-details-section .container,
 .peace-of-mind-section .container {
-    background: var(--light-background);
     padding: 40px 40px;
     box-shadow: none;
     border-radius: var(--border-radius);
@@ -440,12 +439,12 @@ section {
 }
 
 .mind-item {
-    background-color: var(--alt-background);
+    background-color: #FFFFFF;
     padding: 25px;
     border-radius: var(--border-radius);
     margin: 0 auto 20px auto;
     max-width: 800px;
-    border-left: 5px solid var(--primary-color);
+    /* border-left: 5px solid var(--primary-color); */
     font-size: 1.1rem;
 }
 
@@ -464,7 +463,7 @@ section {
     box-shadow: none;
     flex: 1;
     max-width: 450px;
-    border-top: 5px solid var(--primary-color);
+    /* border-top: 5px solid var(--primary-color); */
 }
 .detail-box h3 {
     color: var(--accent-color);
